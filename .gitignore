@@ -67,3 +67,8 @@ examples/tests/*
 texput.log
 texput.aux
 result_images
+
+# Test coverage files #
+#######################
+.coverage
+/cover

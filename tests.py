@@ -28,6 +28,9 @@ if font_manager._fmcache is not None:
         time.sleep(0.5)
 
 plugins = [KnownFailure]
+env = {"NOSE_WITH_COVERAGE": 1,
+       'NOSE_COVER_PACKAGE': 'matplotlib',
+       'NOSE_COVER_HTML': 1}
 
 # Nose doesn't automatically instantiate all of the plugins in the
 # child processes, so we have to provide the multiprocess plugin with
@@ -45,7 +48,7 @@ def run():
         faulthandler.enable()
 
     nose.main(addplugins=[x() for x in plugins],
-              defaultTest=default_test_modules)
+              defaultTest=default_test_modules, env=env)
 
 if __name__ == '__main__':
     if '--no-pep8' in sys.argv:
