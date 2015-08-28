@@ -127,9 +127,9 @@ import numpy
 from matplotlib.externals.six.moves.urllib.request import urlopen
 from matplotlib.externals.six.moves import reload_module as reload
 
-import theversion
-__version__ = theversion.version(__file__)
-del theversion
+import whatsmyversion
+__version__ = whatsmyversion.version(__file__, use_local_version_id=False)
+del whatsmyversion
 __version__numpy__ = str('1.6')  # minimum required numpy version
 
 try:
