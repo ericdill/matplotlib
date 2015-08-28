@@ -110,6 +110,7 @@ def extract_versions():
     with open('lib/matplotlib/__init__.py') as fd:
         for line in fd.readlines():
             if (line.startswith('__version__')):
+                import theversion
                 exec(line.strip())
     return locals()
 
